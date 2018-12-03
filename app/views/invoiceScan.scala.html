@@ -1,0 +1,43 @@
+@(user: User)
+
+@main("fashion-Login", user) {
+  <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+  <script src="@routes.Assets.at("javascripts/dirPagination.js")"></script>
+
+
+  <script src="@routes.Assets.at("js/invoiceScanApp.js")"></script>
+
+
+  <div ng-controller="codeGeneratorCtrl">
+    <body>
+
+
+
+      <form class="codeEntry" ng-submit="save(data)" >
+
+        <div class="row" >
+          <div class="form-group-custmize col-md-3 col-xs-12">
+            <label>Item Description <span class="redcolor"> *</span></label>
+            <input class="input inputTypeText col-md-9" type="text" name="uniqueId" id="uniqueId"
+            ng-model="data.uniqueId" required>
+          </div>
+
+          <div class="row">
+            <label></label>
+            <button type="submit" class="btn btn-primary logsubmit-btn" >save</button>
+
+          </div>
+        </div>
+
+
+      </form>
+      <form>
+
+        <div class="text-center">
+          <dir-pagination-controls boundary-links="true" direction-links="true">
+          </dir-pagination-controls>
+        </div>
+      </form>
+    </body>
+  </div>
+}

@@ -1,0 +1,32 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+GET         /                                                @controllers.Application.index()
+POST        /validate                                         @controllers.Application.validate()
+GET         /account/getAll                                   @controllers.Application.getAll()
+GET         /logout                                           @controllers.Application.logout()
+
+
+
+
+#codeGenerator
+GET         /invoiceScan                                     controllers.InvoiceScanController.index()
+POST        /invoiceScanCreate                               controllers.InvoiceScanController.create()
+POST        /invoiceScanDelete/:invoiceScan               controllers.InvoiceScanController.delete(invoiceScan)
+GET         /invoiceScanList                                 controllers.InvoiceScanController.getAll()
+
+
+
+
+
+
+
+
+
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
